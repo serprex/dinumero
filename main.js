@@ -38,13 +38,10 @@ startbtn.addEventListener("click", function (e) {
 		const taken = new Set();
 		for (let f = 0; f < freqCount; f++) {
 			let actualCount = 0;
-			for (
-				let i = 0;
-				i < 30000;
-				i += Math.random() * Math.random() * 2000 * freqCount
-			) {
+			const duration = 28081 + 5040 * Math.random();
+			for (let i = 0; i < duration; i += Math.random() * 997 * freqCount) {
 				if (taken.has(i)) continue;
-				for (let j = i - 40; j < i + 40; j++) {
+				for (let j = i - 70; j < i + 70; j++) {
 					taken.add(j);
 				}
 				actualCount++;
